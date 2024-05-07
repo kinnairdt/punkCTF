@@ -27,7 +27,7 @@ def decrypt_file(file_path, keys_folder):
         encrypted_data = encrypted_file.read()
     
     for key_file in os.listdir(keys_folder):
-        if key_file.endswith("1.txt"):
+        if key_file.endswith(".txt"):
             key_path = os.path.join(keys_folder, key_file)
             private_key = load_private_key(key_path)
             decrypted_data = decrypt_with_rsa(encrypted_data, private_key)
